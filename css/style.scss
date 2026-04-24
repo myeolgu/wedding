@@ -17,6 +17,7 @@ $color-green-bg: #d6dfc0;
 $font-serif-en: 'Cormorant Garamond', serif;
 $font-serif-kr: 'Noto Serif KR', serif;
 $font-sans-kr: 'Noto Sans KR', sans-serif;
+$font-pen: 'Nanum Pen Script', cursive;
 
 $radius-card: 20px;
 $radius-btn: 50px;
@@ -50,7 +51,7 @@ html {
 }
 
 body {
-  font-family: $font-sans-kr;
+  font-family: $font-serif-kr;
   background: $color-beige;
   color: $color-text;
   min-height: 100vh;
@@ -74,6 +75,44 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+// =============================================
+// INTRO OVERLAY
+// =============================================
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.5s ease, visibility 1.5s ease;
+  max-width: none !important; // body > * 의 제약을 해제
+
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.intro-text {
+  font-family: $font-pen;
+  font-size: 2.5rem;
+  color: $color-white;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid $color-white;
+  width: fit-content;
+  margin: 0 auto;
+  animation: introCursor 0.8s step-end infinite;
+}
+
+@keyframes introCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: $color-white; }
 }
 
 // =============================================
@@ -664,6 +703,7 @@ a {
   aspect-ratio: 1;
   border-radius: 12px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;

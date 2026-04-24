@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Serif KR", serif;
   background: #e8e4d9;
   color: #3a3630;
   min-height: 100vh;
@@ -37,6 +37,43 @@ a {
   color: inherit;
 }
 
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.5s ease, visibility 1.5s ease;
+  max-width: none !important;
+}
+.intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-text {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2.5rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ffffff;
+  width: fit-content;
+  margin: 0 auto;
+  animation: introCursor 0.8s step-end infinite;
+}
+
+@keyframes introCursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ffffff;
+  }
+}
 .section-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.2rem;

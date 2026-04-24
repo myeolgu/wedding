@@ -241,9 +241,43 @@ function initScrollReveal() {
 }
 
 // =============================================
+// INTRO OVERLAY
+// =============================================
+function initIntro() {
+  const overlay = document.getElementById('intro-overlay');
+  const textEl = document.getElementById('intro-text');
+  if (!overlay || !textEl) return;
+
+  const message = "우리의 결혼식에 환영합니다";
+  let idx = 0;
+
+  function type() {
+    if (idx < message.length) {
+      textEl.textContent += message.charAt(idx);
+      idx++;
+      setTimeout(type, 120); // 타이핑 속도 조정
+    } else {
+      // 타이핑 완료 후 커서 멈춤 및 페이드 아웃 준비
+      setTimeout(() => {
+        textEl.style.borderRight = 'none';
+      }, 1000);
+    }
+  }
+
+  // 0.5초 뒤 타이핑 시작
+  setTimeout(type, 500);
+
+  // 4초 후 오버레이 페이드 아웃
+  setTimeout(() => {
+    overlay.classList.add('fade-out');
+  }, 4000);
+}
+
+// =============================================
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
+  initIntro();
   initCountdown();
   initRelationshipCounter();
   initGallery();
