@@ -248,6 +248,10 @@ function initIntro() {
   const textEl = document.getElementById('intro-text');
   if (!overlay || !textEl) return;
 
+  // 진입 시 최상단으로 스크롤 고정 및 스크롤 금지
+  window.scrollTo(0, 0);
+  document.body.style.overflow = 'hidden';
+
   const message = "우리의 결혼식에 환영합니다";
   let idx = 0;
 
@@ -255,26 +259,24 @@ function initIntro() {
     if (idx < message.length) {
       textEl.textContent += message.charAt(idx);
       idx++;
-      setTimeout(type, 120); // 타이핑 속도 조정
+      setTimeout(type, 120);
     } else {
-      // 타이핑 완료 후 커서 멈춤 및 페이드 아웃 준비
       setTimeout(() => {
         textEl.style.borderRight = 'none';
       }, 1000);
     }
   }
 
-  // 0.5초 뒤 타이핑 시작
   setTimeout(type, 500);
 
-  // 1초 뒤 배경 투명도 조절 (폰트 로딩 완료 시점쯤 뒤를 보여줌)
   setTimeout(() => {
     overlay.classList.add('bg-show');
   }, 1000);
 
-  // 4초 후 오버레이 페이드 아웃
+  // 인트로 페이드 아웃 및 스크롤 허용
   setTimeout(() => {
     overlay.classList.add('fade-out');
+    document.body.style.overflow = '';
   }, 4500);
 }
 
@@ -284,6 +286,7 @@ function initIntro() {
 document.addEventListener('DOMContentLoaded', () => {
   // 폰트가 완전히 로드될 때까지 기다린 후 실행
   document.fonts.ready.then(() => {
+    document.body.style.opacity = '1';
     initIntro();
     initCountdown();
     initRelationshipCounter();
