@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -89,16 +91,12 @@ a {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 0 120px;
 }
 
 .hero__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -202,17 +200,14 @@ a {
 
 .sec-greeting {
   background: #f7f6f2;
-  padding: 60px 0;
-  max-width: 430px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding: 40px 24px;
   text-align: center;
 }
 
 .greeting__deco {
   font-size: 1.6rem;
   color: #8f9d6a;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   letter-spacing: 8px;
 }
 .greeting__deco::before {
@@ -222,13 +217,13 @@ a {
 .greeting__quote {
   font-family: "Noto Serif KR", serif;
   font-size: 0.95rem;
-  line-height: 2;
+  line-height: 2.2;
   color: #3a3630;
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 .greeting__quote cite {
   display: block;
-  margin-top: 12px;
+  margin-top: 20px;
   font-size: 0.85rem;
   color: #7a7570;
   font-style: normal;
@@ -315,19 +310,25 @@ a {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 32px;
+  table-layout: fixed;
 }
-.calendar__table th, .calendar__table td {
+.calendar__table th,
+.calendar__table td {
   text-align: center;
-  padding: 10px 4px;
+  padding: 10px 0;
   font-size: 0.9rem;
   color: #3a3630;
+  width: 14.28%;
+  height: 44px;
+  vertical-align: middle;
 }
 .calendar__table th {
   font-weight: 500;
   color: #7a7570;
   font-size: 0.82rem;
 }
-.calendar__table th.sun, .calendar__table td.sun {
+.calendar__table th.sun,
+.calendar__table td.sun {
   color: #e05555;
 }
 .calendar__table th.sat {
@@ -343,8 +344,8 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   background: #8f9d6a;
   color: #ffffff;
   border-radius: 50%;
@@ -545,9 +546,10 @@ a {
 .timeline__item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
   position: relative;
+  width: 100%;
 }
 
 .timeline__item--left {
@@ -558,26 +560,36 @@ a {
   flex-direction: row-reverse;
 }
 
+.timeline__img-wrap,
+.timeline__content {
+  width: calc(50% - 20px);
+  flex-shrink: 0;
+}
+
 .timeline__img-wrap {
-  width: 42%;
   aspect-ratio: 1;
   border-radius: 12px;
   overflow: hidden;
-  flex-shrink: 0;
+}
+.timeline__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .timeline__dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: #8f9d6a;
+  border: 3px solid #f7f6f2;
   border-radius: 50%;
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  margin: 0 14px;
 }
 
 .timeline__content {
-  flex: 1;
   text-align: left;
 }
 
@@ -587,23 +599,25 @@ a {
 
 .timeline__badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 4px 10px;
   background: #c5cfa8;
   color: #5c4f3d;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .timeline__emoji {
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #3a3630;
 }
 
 .timeline__text {
-  font-size: 0.8rem;
-  line-height: 1.7;
+  font-size: 0.82rem;
+  line-height: 1.6;
   color: #7a7570;
 }
 
@@ -1111,9 +1125,19 @@ body > * {
   body {
     background: #e8e4d9;
   }
-  .sec-hero, .sec-greeting, .sec-photo, .sec-date-display,
-  .sec-calendar, .sec-family, .sec-about, .sec-timeline,
-  .sec-gallery, .sec-location, .sec-account, .sec-guestbook, .sec-cta {
+  .sec-hero,
+  .sec-greeting,
+  .sec-photo,
+  .sec-date-display,
+  .sec-calendar,
+  .sec-family,
+  .sec-about,
+  .sec-timeline,
+  .sec-gallery,
+  .sec-location,
+  .sec-account,
+  .sec-guestbook,
+  .sec-cta {
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   }
 }
