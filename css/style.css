@@ -59,20 +59,26 @@ a {
 }
 
 .intro-svg {
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   overflow: visible;
+  margin: 0 auto;
 }
 
 .intro-svg-text {
   font-family: "Nanum Pen Script", cursive;
-  font-size: 64px;
+  font-size: 80px;
   fill: #ffffff;
   letter-spacing: 0.05em;
 }
 
-#mask-stroke {
-  animation: introWrite 3s ease-in-out forwards 0.8s;
+.mask-path-1 {
+  animation: introWrite 1.8s ease-in-out forwards 0.8s;
+}
+
+.mask-path-2 {
+  animation: introWrite 1.5s ease-in-out forwards 2.6s;
 }
 
 @keyframes introWrite {

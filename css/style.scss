@@ -104,20 +104,26 @@ a {
 }
 
 .intro-svg {
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   overflow: visible;
+  margin: 0 auto;
 }
 
 .intro-svg-text {
   font-family: $font-pen;
-  font-size: 64px;
+  font-size: 80px; // 두 줄로 나눠서 80px로도 충분히 큼
   fill: $color-white;
   letter-spacing: 0.05em;
 }
 
-#mask-stroke {
-  animation: introWrite 3s ease-in-out forwards 0.8s;
+.mask-path-1 {
+  animation: introWrite 1.8s ease-in-out forwards 0.8s;
+}
+
+.mask-path-2 {
+  animation: introWrite 1.5s ease-in-out forwards 2.6s; // 0.8 + 1.8 = 2.6
 }
 
 @keyframes introWrite {

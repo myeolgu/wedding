@@ -20,16 +20,22 @@
   <!-- ===================== INTRO OVERLAY ===================== -->
   <div class="intro-overlay" id="intro-overlay">
     <div class="intro-content">
-      <svg class="intro-svg" viewBox="0 0 800 150">
+      <svg class="intro-svg" viewBox="0 0 600 320">
         <defs>
-          <mask id="text-mask">
-            <path d="M 50 75 L 750 75"
-                  fill="none" stroke="white" stroke-width="120" 
-                  stroke-dasharray="1000" stroke-dashoffset="1000" id="mask-stroke" />
+          <mask id="mask1">
+            <path d="M 50 100 L 550 100" fill="none" stroke="white" stroke-width="150" 
+                  stroke-dasharray="600" stroke-dashoffset="600" class="mask-path-1" />
+          </mask>
+          <mask id="mask2">
+            <path d="M 50 220 L 550 220" fill="none" stroke="white" stroke-width="150" 
+                  stroke-dasharray="600" stroke-dashoffset="600" class="mask-path-2" />
           </mask>
         </defs>
-        <text x="50%" y="90" text-anchor="middle" class="intro-svg-text" mask="url(#text-mask)">
-          우리의 결혼식에 환영합니다
+        <text x="300" y="110" text-anchor="middle" class="intro-svg-text" mask="url(#mask1)">
+          우리의 결혼식에
+        </text>
+        <text x="300" y="230" text-anchor="middle" class="intro-svg-text" mask="url(#mask2)">
+          환영합니다
         </text>
       </svg>
     </div>
