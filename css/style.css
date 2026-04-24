@@ -109,13 +109,13 @@ a {
   left: 50%;
   transform: translateX(-50%);
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 300;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   color: #ffffff;
-  white-space: nowrap;
   z-index: 2;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
 }
 .hero__title .hero__amp {
   font-style: italic;
