@@ -38,6 +38,23 @@ function initCountdown() {
 }
 
 // =============================================
+// RELATIONSHIP COUNTER
+// =============================================
+function initRelationshipCounter() {
+  const start = new Date('2025-02-23T00:00:00');
+  const daysEl = document.getElementById('relationship-days');
+  if (!daysEl) return;
+
+  function update() {
+    const now = new Date();
+    const diff = now - start;
+    const days = Math.floor(diff / 86400000) + 1; // 오늘을 1일로 계산하려면 +1
+    daysEl.textContent = days.toLocaleString();
+  }
+  update();
+}
+
+// =============================================
 // GALLERY LIGHTBOX
 // =============================================
 function initGallery() {
@@ -228,6 +245,7 @@ function initScrollReveal() {
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
+  initRelationshipCounter();
   initGallery();
   initAccordion();
   initCopy();
