@@ -267,10 +267,15 @@ function initIntro() {
   // 0.5초 뒤 타이핑 시작
   setTimeout(type, 500);
 
+  // 1초 뒤 배경 투명도 조절 (폰트 로딩 완료 시점쯤 뒤를 보여줌)
+  setTimeout(() => {
+    overlay.classList.add('bg-show');
+  }, 1000);
+
   // 4초 후 오버레이 페이드 아웃
   setTimeout(() => {
     overlay.classList.add('fade-out');
-  }, 4000);
+  }, 4500);
 }
 
 // =============================================

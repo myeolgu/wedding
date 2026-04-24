@@ -83,17 +83,21 @@ a {
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: #000; // 초기에는 완전히 가려서 폰트 로딩 안 보이게
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 1.5s ease, visibility 1.5s ease;
-  max-width: none !important; // body > * 의 제약을 해제
+  transition: opacity 1.5s ease, visibility 1.5s ease, background 1.5s ease;
+  max-width: none !important;
 
   &.fade-out {
     opacity: 0;
     visibility: hidden;
+  }
+
+  &.bg-show {
+    background: rgba(0, 0, 0, 0.6); // 로딩 후 0.6으로 변경하여 뒤가 보이게
   }
 }
 
