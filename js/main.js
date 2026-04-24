@@ -2,7 +2,7 @@
 // COUNTDOWN TIMER
 // =============================================
 function initCountdown() {
-  const target = new Date('2026-06-06T12:00:00');
+  const target = new Date('2027-04-17T12:00:00');
   const daysEl = document.getElementById('cd-days');
   const hoursEl = document.getElementById('cd-hours');
   const minsEl = document.getElementById('cd-minutes');

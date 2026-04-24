@@ -789,6 +789,22 @@ a {
   border-top: 1px solid #e8e4d9;
 }
 
+.location__map-link {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #03c75a;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.location__map-link:hover {
+  opacity: 0.85;
+}
+
 .sec-account {
   background: #f7f6f2;
   padding: 48px 24px;

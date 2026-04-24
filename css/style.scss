@@ -640,6 +640,19 @@ a { text-decoration: none; color: inherit; }
 .transport-title { font-weight: 500; font-size: 0.95rem; margin-bottom: 8px; color: $color-olive-dark; }
 .transport-desc  { font-size: 0.82rem; line-height: 1.8; color: $color-text; }
 .location__divider { border: none; border-top: 1px solid $color-beige; }
+.location__map-link {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #03c75a;
+  color: $color-white;
+  border-radius: $radius-btn;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  &:hover { opacity: 0.85; }
+}
 
 // =============================================
 // SEC 11: ACCOUNT
