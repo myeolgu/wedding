@@ -103,22 +103,27 @@ a {
   }
 }
 
-.intro-text {
-  font-family: $font-pen;
-  font-size: 2.5rem;
-  color: $color-white;
-  letter-spacing: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid $color-white;
-  width: fit-content;
-  margin: 0 auto;
-  animation: introCursor 0.8s step-end infinite;
+.intro-svg {
+  width: 90%;
+  max-width: 500px;
+  overflow: visible;
 }
 
-@keyframes introCursor {
-  from, to { border-color: transparent; }
-  50% { border-color: $color-white; }
+.intro-svg-text {
+  font-family: $font-pen;
+  font-size: 64px;
+  fill: $color-white;
+  letter-spacing: 0.05em;
+}
+
+#mask-stroke {
+  animation: introWrite 3s ease-in-out forwards 0.8s;
+}
+
+@keyframes introWrite {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 // =============================================

@@ -245,39 +245,22 @@ function initScrollReveal() {
 // =============================================
 function initIntro() {
   const overlay = document.getElementById('intro-overlay');
-  const textEl = document.getElementById('intro-text');
-  if (!overlay || !textEl) return;
+  if (!overlay) return;
 
   // 진입 시 최상단으로 스크롤 고정 및 스크롤 금지
   window.scrollTo(0, 0);
   document.body.style.overflow = 'hidden';
 
-  const message = "우리의 결혼식에 환영합니다";
-  let idx = 0;
-
-  function type() {
-    if (idx < message.length) {
-      textEl.textContent += message.charAt(idx);
-      idx++;
-      setTimeout(type, 120);
-    } else {
-      setTimeout(() => {
-        textEl.style.borderRight = 'none';
-      }, 1000);
-    }
-  }
-
-  setTimeout(type, 500);
-
+  // 1초 뒤 배경 투명도 조절
   setTimeout(() => {
     overlay.classList.add('bg-show');
   }, 1000);
 
-  // 인트로 페이드 아웃 및 스크롤 허용
+  // 인트로 페이드 아웃 및 스크롤 허용 (SVG 애니메이션 시간에 맞춰 5.5초)
   setTimeout(() => {
     overlay.classList.add('fade-out');
     document.body.style.overflow = '';
-  }, 4500);
+  }, 5500);
 }
 
 // =============================================
