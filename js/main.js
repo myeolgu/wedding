@@ -282,13 +282,16 @@ function initIntro() {
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
-  initIntro();
-  initCountdown();
-  initRelationshipCounter();
-  initGallery();
-  initAccordion();
-  initCopy();
-  initGuestbook();
-  initPetals();
-  initScrollReveal();
+  // 폰트가 완전히 로드될 때까지 기다린 후 실행
+  document.fonts.ready.then(() => {
+    initIntro();
+    initCountdown();
+    initRelationshipCounter();
+    initGallery();
+    initAccordion();
+    initCopy();
+    initGuestbook();
+    initPetals();
+    initScrollReveal();
+  });
 });
